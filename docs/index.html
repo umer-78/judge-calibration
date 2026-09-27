@@ -1,20 +1,27 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-scene="calibrate">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Judge Calibration · Umer Hashmi</title>
   <meta name="description" content="How far an LLM judge&#x27;s scores can be trusted: agreement with two human pools, length and self-preference bias, and calibration, on 1,399 HELM Instruct outputs.">
+  <meta name="theme-color" content="#a16207">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="kit.css">
-  <style>:root { --accent: #a16207; --on-accent: #fff; } @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --accent: #facc15; --on-accent: #0f0e0c; } }</style>
+  <link rel="stylesheet" href="fx.css">
+  <style>:root { --accent: #a16207; --fx-2: #ec4899; --fx-3: #6366f1; --on-accent: #fff; } @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --accent: #facc15; --on-accent: #0f0e0c; } }</style>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <a class="crumb" href="https://umer-78.github.io/">← All projects</a>
+    <nav class="fx-nav" aria-label="On this page"><a class="fx-home" href="https://umer-78.github.io/">← All projects</a><a class="fx-gh" href="https://github.com/umer-78/judge-calibration">GitHub</a></nav>
+    <header class="fx-hero">
+      <span class="fx-eyebrow">LLM engineering · Python</span>
       <h1>Judge Calibration</h1>
       <p class="lede">Before an LLM judge's scores drive decisions, measure it against people. Here GPT-4's 1-to-5 ratings of 1,399 instruction-following outputs are compared with two independent human pools on five criteria: how often they agree, whether the judge favours long answers or its own model family, and whether a calibration map brings its scores in line.</p>
       <div class="links"><a class="btn primary" href="#grid">See the scores side by side</a><a class="btn" href="https://github.com/umer-78/judge-calibration">Code and method</a></div>
+      <div class="fx-tags" aria-hidden="true"><div><span>python</span><span>llm</span><span>llm-as-judge</span><span>evaluation</span><span>statistics</span><span>helm</span><span>python</span><span>llm</span><span>llm-as-judge</span><span>evaluation</span><span>statistics</span><span>helm</span></div></div>
     </header>
     <main>
       <section class="kpis" id="kpis"></section>
@@ -39,5 +46,6 @@
     <footer>Built by <a href="https://github.com/umer-78">Umer Hashmi</a> · Ratings from <a href="https://crfm.stanford.edu/helm/instruct/">HELM Instruct</a> (Stanford CRFM): GPT-4, MTurk and Scale raters on the same outputs, downloaded at run time; this page holds only counts and averages</footer>
   </div>
   <script type="module" src="app.js"></script>
+  <script type="module" src="fx.js"></script>
 </body>
 </html>
