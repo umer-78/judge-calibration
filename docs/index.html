@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Judge Calibration · Umer Hashmi</title>
+  <meta name="description" content="How far an LLM judge&#x27;s scores can be trusted: agreement with two human pools, length and self-preference bias, and calibration, on 1,399 HELM Instruct outputs.">
+  <link rel="stylesheet" href="kit.css">
+  <style>:root { --accent: #a16207; --on-accent: #fff; } @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --accent: #facc15; --on-accent: #0f0e0c; } }</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="crumb" href="https://umer-78.github.io/">← All projects</a>
+      <h1>Judge Calibration</h1>
+      <p class="lede">Before an LLM judge's scores drive decisions, measure it against people. Here GPT-4's 1-to-5 ratings of 1,399 instruction-following outputs are compared with two independent human pools on five criteria: how often they agree, whether the judge favours long answers or its own model family, and whether a calibration map brings its scores in line.</p>
+      <div class="links"><a class="btn primary" href="#grid">See the scores side by side</a><a class="btn" href="https://github.com/umer-78/judge-calibration">Code and method</a></div>
+    </header>
+    <main>
+      <section class="kpis" id="kpis"></section>
+      <section class="card" id="grid">
+        <h2>The judge's score against people's</h2>
+        <p class="sub">Each cell counts outputs by the judge's score (rows) and the human pool's average of two raters (columns). Agreement is quadratic-weighted kappa: 1 is perfect, 0 is chance. The two human pools agreeing with each other is the ceiling a judge can be held to.</p>
+        <div class="controls"><label>Criterion</label><div id="crit"></div></div>
+        <div class="controls"><label>Human pool</label><div id="pool"></div></div>
+        <div class="readout" id="agree"></div>
+        <div id="heat" style="margin-top:14px"></div>
+      </section>
+      <div class="grid2">
+        <section class="card"><h2>Mean score per model</h2><p class="sub" id="famSub"></p><div id="fam"></div></section>
+        <section class="card"><h2>Does a calibration map help?</h2><p class="sub">Kappa against the human pool the mapping never saw (mean absolute error in brackets), cross-fitted. Features: output length and model family.</p><div id="cal"></div></section>
+      </div>
+      <section class="card">
+        <h2>Biases, every criterion</h2>
+        <p class="sub">Length: partial rank correlation of the score with the output's length, a human pool's score held fixed. Self-preference: how much more the judge favours GPT-family outputs over Cohere's than the humans do, at the same human score; highlighted where the 95% interval leaves out zero.</p>
+        <div id="bias"></div>
+      </section>
+    </main>
+    <footer>Built by <a href="https://github.com/umer-78">Umer Hashmi</a> · Ratings from <a href="https://crfm.stanford.edu/helm/instruct/">HELM Instruct</a> (Stanford CRFM): GPT-4, MTurk and Scale raters on the same outputs, downloaded at run time; this page holds only counts and averages</footer>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

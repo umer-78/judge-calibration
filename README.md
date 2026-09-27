@@ -1,5 +1,7 @@
 # judge-calibration
 
+**Live demo:** https://umer-78.github.io/judge-calibration/ (the judge's scores against two human pools, per criterion)
+
 How far can you trust an LLM judge? This repo measures GPT-4 as a judge against two pools of human raters on 1,399 real model outputs. It reports weighted kappa, three bias numbers and a calibration that holds up on raters it never saw. It also contains the judge itself: a rubric with every point defined, reason-before-score prompting, and a position-bias check.
 
 The data is HELM Instruct. Outputs from GPT-4, GPT-3.5 Turbo and Cohere Command on five instruction sets (grammar, koala, open_assistant, self_instruct, vicuna) were each rated 1–5 on five criteria by GPT-4 and by two human pools, Amazon Mechanical Turk and Scale AI.
@@ -73,4 +75,5 @@ The data is HELM Instruct. Outputs from GPT-4, GPT-3.5 Turbo and Cohere Command 
 pip install -e '.[dev]'
 pytest -q
 python -m judgecal bench
+python -m judgecal.demo    # rebuild the live demo's data in docs/
 ```
