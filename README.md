@@ -1,5 +1,7 @@
 # judge-calibration
 
+[![CI](https://github.com/umer-78/judge-calibration/actions/workflows/ci.yml/badge.svg)](https://github.com/umer-78/judge-calibration/actions/workflows/ci.yml)
+
 [![Judge Calibration: the live demo](.github/preview.jpg)](https://umer-78.github.io/judge-calibration/)
 
 **Live demo:** https://umer-78.github.io/judge-calibration/ (the judge's scores against two human pools, per criterion)
@@ -79,3 +81,7 @@ pytest -q
 python -m judgecal bench
 python -m judgecal.demo    # rebuild the live demo's data in docs/
 ```
+
+## Licence
+
+MIT licence (see [LICENSE](LICENSE)). The data it evaluates (HELM Instruct's ratings) keeps its own licence and is downloaded when you run it.
