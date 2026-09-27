@@ -1,5 +1,7 @@
 # judge-calibration
 
+[![Judge Calibration: the live demo](.github/preview.jpg)](https://umer-78.github.io/judge-calibration/)
+
 **Live demo:** https://umer-78.github.io/judge-calibration/ (the judge's scores against two human pools, per criterion)
 
 How far can you trust an LLM judge? This repo measures GPT-4 as a judge against two pools of human raters on 1,399 real model outputs. It reports weighted kappa, three bias numbers and a calibration that holds up on raters it never saw. It also contains the judge itself: a rubric with every point defined, reason-before-score prompting, and a position-bias check.
