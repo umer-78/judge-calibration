@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en" data-scene="calibrate">
+<html lang="en" data-scene="calib" data-look="playfair" data-hero="right" data-card="glass" data-motif="grid" data-backdrop="motes">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Judge Calibration · Umer Hashmi</title>
   <meta name="description" content="How far an LLM judge&#x27;s scores can be trusted: agreement with two human pools, length and self-preference bias, and calibration, on 1,399 HELM Instruct outputs.">
-  <meta name="theme-color" content="#a16207">
+  <meta name="theme-color" content="#3d74cb">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Umer Hashmi · projects">
   <meta property="og:title" content="Judge Calibration · Umer Hashmi">
@@ -16,10 +16,15 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Source+Sans+3:wght@400;600&family=Source+Code+Pro:wght@400;600&display=swap" id="fx-fonts">
   <link rel="stylesheet" href="kit.css">
   <link rel="stylesheet" href="fx.css">
   <style>:root { --accent: #a16207; --fx-2: #ec4899; --fx-3: #6366f1; --on-accent: #fff; } @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --accent: #facc15; --on-accent: #0f0e0c; } }</style>
+<style id="fx-look">:root[data-look] { --font: 'Source Sans 3', system-ui, -apple-system, "Segoe UI", sans-serif; --fx-display: 'Playfair Display', Georgia, serif; --mono: 'Source Code Pro', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; --fx-display-weight: 800; --fx-tracking: -0.015em; --fx-title-case: none; --fx-radius: 18px; --fx-hero-radius: 28px; --fx-control-radius: 999px; --accent: #3d74cb; --accent-hover: #2c61b8; --accent-soft: #ebf2ff; --accent-glow: rgb(61 116 203 / 0.16); --on-accent: #ffffff; --fx-2: #ca5794; --fx-3: #0eb4bb; --bg: #f6f9ff; --bg-elevated: #fcfdff; --surface: #fdfeff; --surface-2: #eef4fd; --surface-3: #e5ecf6; --border: #d7dfea; --border-strong: #bdc5d1; --line: #d7dfea; }
+@media (prefers-color-scheme: dark) { :root[data-look]:not([data-theme="light"]) { --accent: #689ef5; --accent-hover: #84b2fc; --accent-soft: rgb(104 158 245 / 0.14); --accent-glow: rgb(104 158 245 / 0.2); --on-accent: #09121f; --fx-2: #f28abe; --fx-3: #21d7de; --bg: #0a1019; --bg-elevated: #101620; --surface: #131a25; --surface-2: #1b222d; --surface-3: #242c37; --border: #2a313b; --border-strong: #3c434d; --line: #2a313b; } }
+:root[data-look][data-theme="dark"] { --accent: #689ef5; --accent-hover: #84b2fc; --accent-soft: rgb(104 158 245 / 0.14); --accent-glow: rgb(104 158 245 / 0.2); --on-accent: #09121f; --fx-2: #f28abe; --fx-3: #21d7de; --bg: #0a1019; --bg-elevated: #101620; --surface: #131a25; --surface-2: #1b222d; --surface-3: #242c37; --border: #2a313b; --border-strong: #3c434d; --line: #2a313b; }</style>
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.min.js" data-fx>
+<link rel="modulepreload" href="fx3d.js" data-fx>
 </head>
 <body>
   <div class="wrap">
