@@ -67,7 +67,7 @@ def load():
 
     rows = {}
     with ThreadPoolExecutor(8) as pool:
-        for (run, scenario, model, rater), preds, instances in pool.map(fetch, runs()):
+        for (_run, scenario, model, rater), preds, instances in pool.map(fetch, runs()):
             text = {i["id"]: i["input"]["text"] for i in instances}
             for p in preds:
                 if all(c in p["stats"] for c in CRITERIA):
